@@ -6,7 +6,7 @@
   "dependencies": {
     "@ant-design/icons": "^5.0.1",
     "@refinedev/antd": "^5.37.1",
-    "@refinedev/cli": "^2.16.21",
+    "@refinedev/cli": "^2.16.1",
     "@refinedev/core": "^4.46.1",
     "@refinedev/devtools": "^1.1.29",
     "@refinedev/inferencer": "^4.5.16",
@@ -24,6 +24,7 @@
     "@graphql-codegen/import-types-preset": "^3.0.0",
     "@graphql-codegen/typescript": "^4.0.1",
     "@graphql-codegen/typescript-operations": "^4.0.1",
+    "@parcel/watcher": "^2.4.0",
     "@types/node": "^18.16.2",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
@@ -42,7 +43,8 @@
     "dev": "refine dev",
     "build": "tsc && refine build",
     "preview": "refine start",
-    "refine": "refine"
+    "refine": "refine",
+    "codegen": "graphql-codegen"
   },
   "browserslist": {
     "production": [
