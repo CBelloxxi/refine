@@ -1,19 +1,36 @@
-import { Card, List } from 'antd';
+import { Card, List, Badge } from 'antd';
 import { CalendarOutlined } from '@ant-design/icons';
 import { Text } from '../text';
 import { useState } from 'react';
 import UpcomingEventsSkeleton from '../skeleton/upcoming-events';
-import { DASHBOARD_CALENDAR_UPCOMING_EVENTS_QUERY } from '@/graphql/queries';
+import { getDate } from '@/utilities/helpers';
+import { useList } from '@refinedev/core';
+import { DASHBORAD_CALENDAR_UPCOMING_EVENTS_QUERY } from '@/graphql/queries';
+import dayjs from 'dayjs';
 
 const UpcomingEvents = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const { data, isLoading: eventsLoading } = useList({
     resource: 'events',
+    pagination: { pageSize: 4},
+    sorters: [
+      {
+        field: 'startDate',
+        order: 'asc',
+      }
+    ],
+    filters: [
+      {
+        field: 'startDate',
+        operator: 'gte',
+        value: dayjs().format('YYYY-MM-DD'),
+      }
+    ],
     meta: {
-      gqlQuery: DASHBOARD_CALENDAR_UPCOMING_EVENTS_QUERY
+      gqlQuery: DASHBORAD_CALENDAR_UPCOMING_EVENTS_QUERY
     }
-  })
+  });
 
   return (
     <Card
@@ -44,7 +61,7 @@ const UpcomingEvents = () => {
       ): (
         <List
           itemLayout='horizonatal'
-          dataSource={[]}
+          dataSource={data?.data || []}
           renderItem={(item) => {
             const renderDate = getDate(item.startDate, item.endDate)
 
