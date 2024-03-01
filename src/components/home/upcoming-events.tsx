@@ -9,9 +9,8 @@ import { DASHBORAD_CALENDAR_UPCOMING_EVENTS_QUERY } from '@/graphql/queries';
 import dayjs from 'dayjs';
 
 const UpcomingEvents = () => {
-  const [isLoading, setIsLoading] = useState(false);
 
-  const { data, isLoading: eventsLoading } = useList({
+  const { data, isLoading } = useList({
     resource: 'events',
     pagination: { pageSize: 4},
     sorters: [
@@ -60,7 +59,7 @@ const UpcomingEvents = () => {
         />
       ): (
         <List
-          itemLayout='horizonatal'
+          itemLayout='horizontal'
           dataSource={data?.data || []}
           renderItem={(item) => {
             const renderDate = getDate(item.startDate, item.endDate)
@@ -77,6 +76,19 @@ const UpcomingEvents = () => {
             )
           }}
         />
+      )}
+
+      {!isLoading && data?.data.length === 0 && (
+        <span
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '220px'
+          }}
+        >
+          No Upcoming Events
+        </span>
       )}
     </Card>
   )
