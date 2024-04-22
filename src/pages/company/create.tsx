@@ -59,7 +59,7 @@ const Create = () => {
                     </Form.Item>
                     <Form.Item
                         label="Sales Owner"
-                        name="saleOwnerId"
+                        name="salesOwnerId"
                         rules={[{required: true}]}
                     >
                     <Select
