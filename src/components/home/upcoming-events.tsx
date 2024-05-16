@@ -5,7 +5,7 @@ import { useState } from 'react';
 import UpcomingEventsSkeleton from '../skeleton/upcoming-events';
 import { getDate } from '@/utilities/helpers';
 import { useList } from '@refinedev/core';
-import { DASHBORAD_CALENDAR_UPCOMING_EVENTS_QUERY } from '@/graphql/queries';
+import { DASHBOARD_CALENDAR_UPCOMING_EVENTS_QUERY } from '@/graphql/queries';
 import dayjs from 'dayjs';
 
 const UpcomingEvents = () => {
@@ -27,7 +27,7 @@ const UpcomingEvents = () => {
       }
     ],
     meta: {
-      gqlQuery: DASHBORAD_CALENDAR_UPCOMING_EVENTS_QUERY
+      gqlQuery: DASHBOARD_CALENDAR_UPCOMING_EVENTS_QUERY
     }
   });
 
