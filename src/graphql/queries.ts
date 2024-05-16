@@ -1,22 +1,24 @@
-import gql from "graphql-tag";
+import { gql } from "graphql-tag";
 
 // Query to get Total Company, Contact and Deal Counts
 export const DASHBOARD_TOTAL_COUNTS_QUERY = gql`
   query DashboardTotalCounts {
-    companies {
-      totalCount
+    type props = {
+    companies: {
+      totalCount: number;
     }
-    contacts {
-      totalCount
+    contacts: {
+      totalCount: number;
+    }      
+    deals: {
+      totalCount:number;
     }
-    deals {
-      totalCount
-    }
+  }
   }
 `;
 
 // Query to get upcoming events
-export const DASHBORAD_CALENDAR_UPCOMING_EVENTS_QUERY = gql`
+export const DASHBOARD_CALENDAR_UPCOMING_EVENTS_QUERY = gql`
   query DashboardCalendarUpcomingEvents(
     $filter: EventFilter!
     $sorting: [EventSort!]
