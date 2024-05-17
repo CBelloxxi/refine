@@ -3,17 +3,15 @@ import { gql } from "graphql-tag";
 // Query to get Total Company, Contact and Deal Counts
 export const DASHBOARD_TOTAL_COUNTS_QUERY = gql`
   query DashboardTotalCounts {
-    type props = {
-    companies: {
-      totalCount: number;
+    companies {
+      totalCount
     }
-    contacts: {
-      totalCount: number;
-    }      
-    deals: {
-      totalCount:number;
+    contacts {
+      totalCount
     }
-  }
+    deals {
+      totalCount
+    }
   }
 `;
 
