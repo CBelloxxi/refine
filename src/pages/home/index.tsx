@@ -1,17 +1,39 @@
 import { DashboardTotalCountCard, DealsChart, LatestActivities, UpcomingEvents } from "@/components";
 import { DASHBOARD_TOTAL_COUNTS_QUERY } from "@/graphql/queries";
-import { useCustom} from "@refinedev/core";
+import { useCustom, CustomResponse, HttpError} from "@refinedev/core";
 import { Col, Row } from "antd";
+import { DocumentNode } from "graphql";
 
+// Define the data that it is importing and using
+interface DashboardTotalCounts {
+  companies: {
+    totalCount: number;
+  };
+  contacts: {
+    totalCount: number;
+  };
+  deals: {
+    totalCount: number;
+  };
+}
+
+//Create a custom response and error handle the gql data shape and packet
 export const Home = () => {
-  const { data, isLoading } = useCustom< typeof DASHBOARD_TOTAL_COUNTS_QUERY > ({
+    const { data, isLoading } = useCustom<CustomResponse<DashboardTotalCounts>, CustomHttpError, unknown, unknown, DashboardTotalCounts>({
     url: '',
     method: 'get',
     meta: {
-      gqlQuery: DASHBOARD_TOTAL_COUNTS_QUERY
+      gqlQuery: DASHBOARD_TOTAL_COUNTS_QUERY as DocumentNode,
     }
   });
 
+  // Define a custom error type that extends HttpError
+interface CustomHttpError extends HttpError {
+  message: string;
+  statusCode: number;
+}
+
+// Render
   return (
     <div>
       <Row gutter={[32, 32]}>
