@@ -9,8 +9,8 @@ interface Props {
 // Create the draggable and uses the dnd kit kit useDraggable function to make it manipulatable
 const KanbanItem = ({ children, id, data }: React.PropsWithChildren<Props>) => {
   const { attributes, listeners, setNodeRef, active } = useDraggable({
-    id: '',
-    data: 'data'
+    id,
+    data,
   })
 
   return (
@@ -37,13 +37,13 @@ const KanbanItem = ({ children, id, data }: React.PropsWithChildren<Props>) => {
                 borderRadius: '8px',
                 boxShadow: 'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px',
                 cursor: 'grabbing',
-              }}
-            >
+              }}>
+              {children}
             </div>
           </DragOverlay>
         )}
-        {children}
       </div>
+        {children}
     </div>
   )
 }

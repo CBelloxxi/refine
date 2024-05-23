@@ -22,9 +22,11 @@ const KanbanColumn = ({
     data,
     onAddClick
     }: React.PropsWithChildren<Props>) => {
-    const { isOver, setNodeRef, active } = useDroppable({ id: '', data: '' })
+    const { isOver, setNodeRef, active } = useDroppable({ id, data })
 
-    const onAddClickHandler = () => { onAddClick?.({ id })};
+    const onAddClickHandler = () => { 
+        onAddClick?.({ id })
+    };
 
     return (
         <div
