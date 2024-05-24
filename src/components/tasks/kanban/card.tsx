@@ -156,7 +156,7 @@ const ProjectCard = ({ id, title, dueDate, users }: ProjectCardProps) => {
     )
 }
 
-export default ProjectCard
+export default ProjectCard;
 
 export const ProjectCardMemo = memo(ProjectCard, (prev, next) => {
     return( 
