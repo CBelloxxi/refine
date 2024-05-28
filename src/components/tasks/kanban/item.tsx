@@ -30,7 +30,7 @@ const KanbanItem = ({ children, id, data }: React.PropsWithChildren<Props>) => {
         }}
       >
         {/* Questions whether id is active and if so render the idem in said box */}
-        {active ?.id === id && (
+        {active?.id === id && (
           <DragOverlay zIndex={1000}>
             <div
               style={{
@@ -38,12 +38,12 @@ const KanbanItem = ({ children, id, data }: React.PropsWithChildren<Props>) => {
                 boxShadow: 'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px',
                 cursor: 'grabbing',
               }}>
-              {children}
+              {/* {children} */}
             </div>
           </DragOverlay>
         )}
-      </div>
         {children}
+      </div>
     </div>
   )
 }

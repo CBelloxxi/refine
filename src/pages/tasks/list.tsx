@@ -1,5 +1,5 @@
 import { KanbanBoardContainer, KanbanBoard } from '@/components/tasks/kanban/board'
-import KanbanColumn from '@/components/tasks/column'
+import KanbanColumn from '@/components/tasks/kanban/column'
 import KanbanItem from '@/components/tasks/kanban/item'
 import { useList, useUpdate } from '@refinedev/core'
 import { TASKS_QUERY, TASK_STAGES_QUERY } from '@/graphql/queries'
@@ -42,7 +42,7 @@ const List = ({ children }: React.PropsWithChildren) => {
     sorters: [
       {
         field: 'dueDate',
-        order: 'asc'
+        order: 'asc',
       }
     ],
     queryOptions:{

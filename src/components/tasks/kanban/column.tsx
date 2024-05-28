@@ -1,6 +1,6 @@
 import { UseDroppableArguments, useDroppable } from '@dnd-kit/core'
 import { Badge, Button, Space } from 'antd'
-import { Text } from '../text'
+import { Text } from '../../text'
 import React from 'react'
 import { PlusOutlined } from '@ant-design/icons'
 
