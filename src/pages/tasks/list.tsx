@@ -5,14 +5,15 @@ import { useList, useUpdate, useNavigation } from '@refinedev/core'
 import { TASKS_QUERY, TASK_STAGES_QUERY } from '@/graphql/queries'
 import React from 'react'
 import { GetFieldsFromList } from '@refinedev/nestjs-query'
-import { TasksQuery } from '@/graphql/types'
-import { TaskStage } from '@/graphql/schema.types'
+import { TasksQuery, TaskStagesQuery } from '@/graphql/types'
 import { ProjectCardMemo } from '@/components/tasks/kanban/card'
 import { KanbanAddCardButton } from '@/components/tasks/kanban/add-card-button'
-import { Column } from '@ant-design/plots'
 import { KanbanColumnSkeleton, ProjectCardSkeleton } from '@/components'
 import { DragEndEvent } from '@dnd-kit/core'
 import { UPDATE_TASK_STAGE_MUTATION } from '@/graphql/mutations'
+
+type Task = GetFieldsFromList<TasksQuery>
+type TaskStage = GetFieldsFromList<TaskStagesQuery> & { tasks: Task[] }
 
 const List = ({ children }: React.PropsWithChildren) => {
   // Data rendering, sorting and filtering for Stages

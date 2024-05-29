@@ -90,7 +90,7 @@ export const CompanyList = ({ children }: React.PropsWithChildren) => {
                 <Input placeholder='Search Company' />
               </FilterDropdown>
             )}
-            render={(value, record) => (
+            render={(_value, record) => (
               <Space>
                 <CustomAvatar shape="square" name={record.name} src={record.avatarUrl}/>
                 <Text style={{ whiteSpace: 'noWrap' }}>
