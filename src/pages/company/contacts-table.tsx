@@ -9,7 +9,7 @@ import {
   SearchOutlined,
   TeamOutlined,
 } from "@ant-design/icons";
-import { Button, Card, Input, Select, Space, Table } from "antd";
+import { Button, Card, Input, Select, Space, Table } from 'antd';
 
 import { Contact } from "@/graphql/schema.types";
 
