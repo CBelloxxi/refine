@@ -1,4 +1,4 @@
-/* eslint-disable */
+// @ts-nocheck
 import CustomAvatar from '@/components/custom-avatar';
 import { Text } from '@/components/text';
 import { COMPANIES_LIST_QUERY } from '@/graphql/queries';
