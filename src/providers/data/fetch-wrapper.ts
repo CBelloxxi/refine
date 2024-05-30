@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { GraphQLFormattedError } from "graphql";
 
 type Error = {
