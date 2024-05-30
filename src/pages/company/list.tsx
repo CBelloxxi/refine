@@ -1,3 +1,4 @@
+/* eslint-disable */
 import CustomAvatar from '@/components/custom-avatar';
 import { Text } from '@/components/text';
 import { COMPANIES_LIST_QUERY } from '@/graphql/queries';
@@ -82,7 +83,6 @@ export const CompanyList = ({ children }: React.PropsWithChildren) => {
           }}
         >
           <Table.Column<Company>
-            {/* @ts-ignore */}
             dataIndex="name"
             title="Company Title"
             defaultFilteredValue={getDefaultFilter('id', filters)}
