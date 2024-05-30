@@ -8,7 +8,7 @@ This [Refine](https://github.com/refinedev/refine) project was generated with [c
 
 <h2>Desktop View</h2>
 
-![Refine Gif](https://github.com/CBelloxxi/refine/blob/main/public/assets/gif/rwag.gif)
+![Refine Gif](https://github.com/CBelloxxi/refine/blob/main/public/gif/rwag.gif)
 
 <h2>Built with & Features:</h2>
 <li>React JS</li>
