@@ -73,7 +73,7 @@ const EditPage = () => {
               <Form.Item>
                 <InputNumber 
                   autoFocus
-                  addonBefore="$"
+                  addonBefore='$'
                   min={0}
                   placeholder='0.00'
                 />

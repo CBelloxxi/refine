@@ -10,6 +10,7 @@ import { HttpError, getDefaultFilter, useGo } from '@refinedev/core';
 import { GetFieldsFromList } from '@refinedev/nestjs-query';
 import { Input, Space, Table } from 'antd';
 import React from 'react'
+import { useSimpleList } from '@refinedev/antd';
 
 export const CompanyList = ({ children }: React.PropsWithChildren) => {
   const go = useGo();
@@ -81,6 +82,7 @@ export const CompanyList = ({ children }: React.PropsWithChildren) => {
           }}
         >
           <Table.Column<Company>
+            {/* @ts-ignore */}
             dataIndex="name"
             title="Company Title"
             defaultFilteredValue={getDefaultFilter('id', filters)}
